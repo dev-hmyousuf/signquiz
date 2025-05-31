@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 50% 98%;
+    --foreground: 20 10% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 20 10% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 10% 10%;
+    
+    --primary: 28 100% 56%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 10% 20%;
+    
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 40%;
+    
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 10% 20%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 5% 90%;
+    --input: 20 5% 90%;
+    --ring: 28 100% 56%;
+    
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 20 10% 10%;
+    --foreground: 210 20% 98%;
+    
+    --card: 20 10% 12%;
+    --card-foreground: 210 20% 98%;
+    
+    --popover: 20 10% 12%;
+    --popover-foreground: 210 20% 98%;
+    
+    --primary: 28 100% 56%;
+    --primary-foreground: 210 20% 98%;
+    
+    --secondary: 215 25% 20%;
+    --secondary-foreground: 210 20% 98%;
+    
+    --muted: 215 25% 20%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    
+    --accent: 215 25% 20%;
+    --accent-foreground: 210 20% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 28 100% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.quiz-card {
+  @apply bg-white dark:bg-card rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-border;
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium;
+}
+
+.badge-primary {
+  @apply bg-primary-100 text-primary-800;
+}
+
+.badge-secondary {
+  @apply bg-secondary text-secondary-foreground;
+}
+
+.progress-bar {
+  @apply h-2 rounded-full bg-primary-200 overflow-hidden;
+}
+
+.progress-value {
+  @apply h-full bg-primary rounded-full transition-all duration-300;
+}
+
+.quiz-answer {
+  @apply relative flex items-center p-4 rounded-lg border border-border mb-3 cursor-pointer transition-all duration-200;
+}
+
+.quiz-answer.selected {
+  @apply border-primary bg-primary-50;
+}
+
+.quiz-answer.correct {
+  @apply border-green-500 bg-green-50;
+}
+
+.quiz-answer.incorrect {
+  @apply border-red-500 bg-red-50;
+}
